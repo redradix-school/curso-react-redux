@@ -30,13 +30,13 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Ejercicio - Base de datos de personajes
 - Ciclo de vida de un componente
 - Optimización de rendimiento
-- Clases ES6 como componentes React (REMAKE)
+- Clases ES6 como componentes React
 - Mixins y Componentes de Orden Superior
 - Componentes sin estado
 - Ejercicio - Construyendo una aplicación real: Ecommerce
 
 
-## 4. Flux y Redux (REMAKE)
+## 4. Flux y Redux
 - Qué es Flux
 - Acciones y creación de acciones
 - Dispatcher
@@ -51,7 +51,7 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Implementando redux-thunk
 - Ejercicio - Terminando nuestro Ecommerce con Redux
 
-## 5. React y Redux en el mundo real (REMAKE)
+## 5. React y Redux en el mundo real
 - Rutas en el cliente con React Router
 - Configuración de rutas y búsqueda de coincidencias
 - Transiciones y ciclo de vida por ruta
@@ -69,6 +69,6 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Mocking con Sinon.js
 - Inyección de dependencias con Rewire
 - React Test Utils
-- Testing de componentes de React (REMAKE)
-- Testing de acciones y reducers de Redux (REMAKE)
+- Testing de componentes de React
+- Testing de acciones y reducers de Redux
 
