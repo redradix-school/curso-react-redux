@@ -21,6 +21,9 @@ var devConfig = {
         loaders: ['react-hot', 'babel']
       }
     ]
+  },
+  devServer: {
+    contentPath: outPath
   }
 };
 
