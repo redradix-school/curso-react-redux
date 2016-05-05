@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <title>Curso React</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- inicio buscador -->
+  <div class="search-engine">
+    <div class="search-title">
+      <div class="row">
+        <h1>Buscador Juego de Tronos</h1>
+      </div>
+    </div>
+    <div class="search-form">
+      <form>
+        <div class="row">
+          <div class="col one-half">
+            <label for="character">Actor / personaje</label>
+            <input type="text" name="character" />
+          </div>
+          <div class="col one-half">
+            <label for="family">Familia</label>
+            <select name="family">
+              <option value="stark">Todas</option>
+              <option value="stark">Stark</option>
+              <option value="stark">Stark</option>
+              <option value="stark">Stark</option>
+              <option value="stark">Stark</option>
+              <option value="stark">Stark</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col one-half">
+            <label for="alive">Sólo personajes vivos</label>
+            <input type="checkbox" name="alive" />
+          </div>
+          <div class="col one-half">
+            <fieldset>
+              <legend>Aparece en temporada</legend>
+              <div class="season-option">
+                1
+                <input type="checkbox" name="s1">
+              </div>
+              <div class="season-option">
+                2
+                <input type="checkbox" name="s2">
+              </div>
+              <div class="season-option">
+                3
+                <input type="checkbox" name="s3">
+              </div>
+              <div class="season-option">
+                4
+                <input type="checkbox" name="s4">
+              </div>
+              <div class="season-option">
+                5
+                <input type="checkbox" name="s5">
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="search-results">
+      <table>
+        <thead>
+          <tr>
+            <th>Personaje</th>
+            <th>Actor</th>
+            <th class="center">Temporadas</th>
+            <th class="center">Vivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Eddard Stark</td>
+            <td>Calvin Hobbs</td>
+            <td class="center">45</td>
+            <td class="center">Sí</td>
+          </tr>
+          <tr>
+            <td>Eddard Stark</td>
+            <td>Calvin Hobbs</td>
+            <td class="center">45</td>
+            <td class="center">Sí</td>
+          </tr>
+          <tr>
+            <td>Eddard Stark</td>
+            <td>Calvin Hobbs</td>
+            <td class="center">45</td>
+            <td class="center">Sí</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="search-results-summary">
+        <div class="row">
+          Encontrados <span class="search-results-total">25</span> personajes
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin buscador -->
+</body>
+</html>

@@ -1,0 +1,326 @@
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+/* Comunes */
+.row {
+  clear: both;
+  margin: 1em 0;
+  padding: 4px 8px;
+  overflow: hidden;
+}
+.col {
+  float: left;
+}
+.col.one-whole {
+  width: 100%;
+}
+.col.three-fourths {
+  width: 75%;
+}
+.col.two-thirds {
+  width: 66.7%;
+}
+.col.one-half {
+  width: 50%;
+}
+.col.one-third {
+  width: 33.3%;
+}
+.col.one-fourth {
+  width: 25%;
+}
+
+input, select, textarea {
+  font-family: sans-serif;
+  font-size: 16px;
+  padding: 4px;
+  resize: none;
+}
+
+input:focus, textarea:focus {
+  background: #f0f0f0;
+}
+
+input.error, select.error, textarea.error {
+  border-color: #f00;
+}
+
+input.big, textarea.big {
+  min-width: 400px;
+}
+.error-text {
+  display: block;
+  padding: 0 4px;
+  color: #f00;
+}
+
+/* Estilos para el ejercicio CRONOMETRO */
+
+.crono {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 15% auto;
+  box-shadow: 0px 2px 3px 2px #ccc;
+}
+
+.crono .header {
+  border-bottom: 2px solid #bbb;
+  background: #e0e0e0;
+  text-align: center;
+}
+
+.crono .header h2 {
+  margin: 0;
+  padding: 4px 0;
+}
+
+.crono .timer {
+  background: #000;
+  color: #0f0;
+  font-size: 50px;
+  text-align: center;
+  font-family: Lucida, Console, monospace;
+}
+
+.crono .actions {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  background: #eee;
+  border-top: 2px solid #fff;
+}
+
+.crono button {
+  padding: 4px 8px;
+  background: #f93;
+  color: #fff;
+  font-weight: bold;
+  font-size: 21px;
+  border: 2px solid #666;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.crono button:hover {
+  color: #ff0;
+  background: #f00;
+}
+
+/* Estilos para el ejercicio buscador */
+.search-form form {
+  margin: 0;
+  padding: 0;
+}
+.search-form label {
+  margin-right: 2em;
+  text-align: left;
+  min-width: 40%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  line-height: 36px;
+}
+.search-form input, .search-form textarea {
+  font-family: sans-serif;
+  font-size: 16px;
+  min-width: 40%;
+  padding: 4px;
+}
+.search-form select {
+  font-family: sans-serif;
+  font-size: 18px;
+  min-width: 40%;
+}
+.search-form fieldset {
+  border-radius: 5px;
+  border-color: #ccc;
+  border-style: solid;
+  margin-bottom: 10px;
+  text-align: right;
+}
+.search-engine {
+  border: 1px solid #000;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 5% auto;
+  box-shadow: 0px 2px 3px 2px #ccc;
+}
+.search-title {
+  padding: 4px 8px;
+}
+.search-title h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.search-form {
+  padding: 4px 8px;
+  border-top: 2px solid #000;
+}
+.season-option {
+  display: inline-block;
+}
+.season-option label {
+  display: inline-block;
+}
+.search-results, .search-results-summary {
+  border-top: 1px solid #ccc;
+  clear: left;
+}
+.search-results table {
+  width: 100%;
+}
+.search-results table th {
+  padding: 4px;
+  text-align: left;
+  border-bottom: 1px dashed #ccc;
+}
+.search-results th.center, td.center {
+  text-align: center
+}
+.search-results tbody table tr {
+  background: #fff;
+}
+.search-results tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+.search-results tbody tr:hover {
+  background-color: #def;
+}
+.search-results table td {
+  padding: 4px;
+}
+.search-results-summary {
+  text-align: center;
+  border-bottom:1px solid #ccc;
+}
+
+
+/* Estilos para ejercicio carrito de la compra */
+.shopping-cart {
+  width: 972px;
+  margin: 0 auto;
+}
+
+.shopping-cart .button {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  background: #876;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.shopping-cart .button:hover {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  background: #987;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.catalog , .cart {
+  /*display: none;*/
+}
+
+.catalog, .cart, .checkout, .thank-you {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 2em;
+}
+.footer {
+  clear: left;
+}
+.catalog-header , .cart-header, .checkout-header , .thank-you-header {
+  border-bottom: 1px solid #f93;
+  margin-bottom: 1em;
+}
+.catalog-header h2, .cart-header h2, .checkout-header h2, .thank-you-header h2 {
+  margin: 0;
+}
+.product {
+
+}
+h2.product-title {
+  font-size: 16px;
+}
+.product-image {
+
+}
+.product-summary {
+  vertical-align: top
+}
+.product-add-to-cart {
+  text-align: right;
+  padding-top: 20px;
+}
+.product-add-to-cart .product-price {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  margin: 0 0 1em 0;
+}
+.product-add-to-cart .button {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  background: #f93;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.cart {
+
+}
+
+.cart table {
+  width: 100%;
+}
+.cart th.qty, .cart td.qty {
+  width: 60px;
+  text-align: center
+}
+th.description, td.description {
+  max-width: 40%;
+  text-align: left;
+}
+td.description h3 {
+  font-size: 16px;
+}
+th.unit-price, td.unit-price , td.subtotal, th.subtotal{
+  text-align: right;
+  min-width: 100px;
+}
+td.actions, th.actions {
+  min-width: 200px;
+  text-align: right;
+}
+td.actions .button, td.actions .button:hover {
+  font-size: 12px;
+  padding: 4px;
+}
+tr.summary td {
+  border-top: 1px solid #999;
+  padding: 8px 0;
+}
+td.total {
+  text-align: right;
+  font-weight: bold;
+}
+
+td.cart-empty {
+  padding: 20px;
+}
+.checkout {
+
+}

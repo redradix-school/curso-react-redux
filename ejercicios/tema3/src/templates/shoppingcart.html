@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+  <title>Curso React - Carrito de la compra</title>
+  <link rel="stylesheet" href="../../dist/index.css" />
+</head>
+<body>
+
+  <!-- inicio buscador -->
+  <div class="shopping-cart">
+    <!-- catalogo -->
+    <div class="catalog">
+      <div class="shop-header">
+        <h2>Productos / Categoría</h2>
+      </div>
+      <div class="catalog-list">
+        <div class="product row">
+          <div class="product-summary col three-fourths">
+            <h2 class="product-title">iPhone 6 Plus</h2>
+            <div class="product-details">
+              <div class="product-image col one-fourth">
+                <img src="http://placehold.it/64x64" height="64" width="64" />
+              </div>
+              <div class="product-summary col three-fourths">
+                <p>A wonderful yet expensive phone with many features that you'll never need</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-add-to-cart col one-fourth">
+            <div class="product-price">699.00 €</div>
+            <div class="add-to-cart">
+              <a class="button">Add to cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="product row">
+          <div class="product-summary col two-thirds">
+            <h2 class="product-title">iPhone 6 Plus</h2>
+            <div class="product-details row">
+              <div class="product-image col one-third">
+                <img src="http://placehold.it/64x64" height="64" width="64" />
+              </div>
+              <div class="product-summary col two-thirds">
+                <p>A wonderful yet expensive phone with many features that you'll never need</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-add-to-cart col one-third">
+            <div class="product-price">699.00 €</div>
+            <div class="add-to-cart">
+              <a class="button">Add to cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="product row">
+          <div class="product-summary col two-thirds">
+            <h2 class="product-title">iPhone 6 Plus</h2>
+            <div class="product-details row">
+              <div class="product-image col one-third">
+                <img src="http://placehold.it/64x64" height="64" width="64" />
+              </div>
+              <div class="product-summary col two-thirds">
+                <p>A wonderful yet expensive phone with many features that you'll never need</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-add-to-cart col one-third">
+            <div class="product-price">699.00 €</div>
+            <div class="add-to-cart">
+              <a class="button">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+    <!-- cart -->
+    <div class="cart">
+      <div class="shop-header"><h2>Tu compra</h2></div>
+      <div class="cart-contents">
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th class="qty">Cant</th>
+              <th class="description">Product</th>
+              <th class="unit-price">Price</th>
+              <th class="subtotal">Total</th>
+              <th class="actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="qty">1</td>
+              <td class="description">
+                <h3>iPhone 6</h3>
+                 <p>A wonderful yet expensive phone with many features that you'll never need</p>
+              </td>
+              <td class="unit-price">699.99 €</td>
+              <td class="subtotal">699.99 €</td>
+              <td class="actions">
+                <a class="button">+ 1</a>
+                <a class="button">- 1</a>
+                <a class="button">Remove</a>
+              </td>
+            </tr>
+            <tr class="summary">
+              <td colspan="4" class="total">
+                699.99 €
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer">
+        <a class="button">Seguir comprando</a>
+        <a class="button">Finalizar compra</a>
+      </div>
+    </div>
+    <!-- checkout -->
+    <div class="checkout">
+      <div class="shop-header"><h2>Finalizar compra</h2></div>
+      <div class="checkout-form">
+        <div class="row">
+          <div class="col one-third">
+            <label>Nombre</label>
+          </div>
+          <div class="col two-thirds">
+            <input type="text" name="nombre" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col one-third">
+            <label>Apellidos</label>
+          </div>
+          <div class="col two-thirds">
+            <input type="text" name="nombre" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col one-third">
+            <label>Email</label>
+          </div>
+          <div class="col two-thirds">
+            <input type="text" name="nombre" class='error' />
+            <span class="error-text">El nombre es obligatorio</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col one-third">
+            <label>Dirección</label>
+          </div>
+          <div class="col two-thirds">
+            <textarea class="big"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col one-whole">
+            <button class="button">Finalizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- thank you -->
+    <div class="thank-you">
+      <div class="shop-header">
+        <h2>¡Gracias por tu compra XXXXX!</h2>
+      </div>
+      <p>Te llegará en breve a tu dirección XXX</p>
+      <p><button class="button">Volver a la tienda</button></p>
+    </div>
+  </div>
+  <!-- fin buscador -->
+</body>
+</html>
