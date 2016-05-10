@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-//Un componente como una función!!
+// El encabezado común a todas las páginas
 const ShopHeader = (props) =>
   <div className='shop-header'>
     <h2>{ props.text }</h2>
   </div>;
 
 ShopHeader.propTypes = {
-  text: React.PropTypes.string.isRequired
+  text: PropTypes.string.isRequired
 }
 
 export default ShopHeader;

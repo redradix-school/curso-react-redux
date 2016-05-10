@@ -1,26 +1,36 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Header from './header';
 import CartItem from './cart_item';
 
-const Cart = React.createClass({
-  propTypes: {
-    items: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onNavigate: PropTypes.func.isRequired,
-    onCartQuantityChange: PropTypes.func.isRequired
-  },
+// Carrito
+class Cart extends Component {
+  constructor(props){
+    super(props);
+    this.handleBack = this.handleBack.bind(this);
+    this.handleCheckout = this.handleCheckout.bind(this);
+  }
+
+  // Calcula el importe total del carrito
   calculateTotal(){
-    return this.props.items.reduce((acc, item) => {
-      //TODO
-    }, 0).toFixed(2);
-  },
+    /* TODO */
+    return 0.toFixed(2);
+
+  }
+
+  // Gestiona el "Volver atrás"
   handleBack(e){
-    //TODO - navegar de vuelta al catalogo
-  },
+    e.preventDefault();
+    this.props.onNavigate('catalog');
+  }
+
+  // Gestiona el botón "Finalizar compra"
   handleCheckout(e){
-    //TODO - navegar a checkout
-  },
+    e.preventDefault();
+    this.props.onNavigate('checkout');
+  }
+
   render(){
-    //TODO: crear componentes CartItem
+    // TODO: mapear elementos del carrito a componentes
     const cartItems = [];
 
     return (
@@ -50,11 +60,17 @@ const Cart = React.createClass({
         </div>
         <div className="footer">
           <a className="button" onClick={ this.handleBack }>Seguir comprando</a>
-          <a className="button" onClick={ this.handleCheckout }>Finalizar compra</a>
+          { cartItems.length === 0 ? null : <a className="button" onClick={ this.handleCheckout }>Finalizar compra</a> }
         </div>
       </div>
     )
-  },
-});
+  }
+}
+
+Cart.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onNavigate: PropTypes.func.isRequired,
+  onCartQuantityChange: PropTypes.func.isRequired
+}
 
 export default Cart;

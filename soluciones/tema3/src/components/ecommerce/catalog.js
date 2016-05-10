@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import Header from './header';
 import CatalogItem from './catalog_item';
 
-const Catalog = React.createClass({
-  propTypes: {
-    items: React.PropTypes.arrayOf(React.PropTypes.object),
-    onNavigate: React.PropTypes.func.isRequired,
-    onAddToCart: React.PropTypes.func.isRequired
-  },
+// Listado de productos de la tienda
+class Catalog extends Component {
   render(){
-    const items = this.props.items.map(item => <CatalogItem key={item.id} product={item} onAddToCart={this.props.onAddToCart} />);
+    const items = this.props.items.map(item =>
+      <CatalogItem key={ item.id } product={ item } onAddToCart={ this.props.onAddToCart } />);
+
     return (
       <div className='catalog'>
         <Header text='Products' />
@@ -20,6 +18,11 @@ const Catalog = React.createClass({
 
     )
   }
-});
+}
+
+Catalog.propTypes = {
+  items: React.PropTypes.arrayOf(React.PropTypes.object),
+  onAddToCart: React.PropTypes.func.isRequired
+}
 
 export default Catalog;

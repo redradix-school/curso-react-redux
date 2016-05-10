@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { extractTimeParts } from '../lib/timeUtils';
+import { extractTimeParts } from '../lib/utils';
 
 /* HEADER */
 const Header = function({ text }){

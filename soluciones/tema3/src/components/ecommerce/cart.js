@@ -1,27 +1,36 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Header from './header';
 import CartItem from './cart_item';
 
-const Cart = React.createClass({
-  propTypes: {
-    items: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onNavigate: PropTypes.func.isRequired,
-    onCartQuantityChange: PropTypes.func.isRequired
-  },
+// Carrito
+class Cart extends Component {
+  constructor(props){
+    super(props);
+    this.handleBack = this.handleBack.bind(this);
+    this.handleCheckout = this.handleCheckout.bind(this);
+  }
+
+  // Calcula el importe total del carrito
   calculateTotal(){
     return this.props.items.reduce((acc, item) => {
       return acc + (item.qty * item.price);
     }, 0).toFixed(2);
-  },
+  }
+
+  // Gestiona el "Volver atrás"
   handleBack(e){
     e.preventDefault();
     this.props.onNavigate('catalog');
-  },
+  }
+
+  // Gestiona el botón "Finalizar compra"
   handleCheckout(e){
     e.preventDefault();
     this.props.onNavigate('checkout');
-  },
+  }
+
   render(){
+    // elementos del carrito
     const cartItems = this.props.items.map(item =>
       <CartItem
         key={item.id} product={item}
@@ -58,7 +67,13 @@ const Cart = React.createClass({
         </div>
       </div>
     )
-  },
-});
+  }
+}
+
+Cart.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onNavigate: PropTypes.func.isRequired,
+  onCartQuantityChange: PropTypes.func.isRequired
+}
 
 export default Cart;

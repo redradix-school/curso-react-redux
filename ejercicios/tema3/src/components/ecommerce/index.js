@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { products as catalogProducts } from '../../data/catalog';
 import Catalog from './catalog';
 import Cart from './cart';
@@ -6,91 +6,111 @@ import Checkout from './checkout';
 import ThankYou from './thankyou';
 import NotFound from './notfound';
 
-const Shop = React.createClass({
-  getInitialState(){
-    return {
-      //página actual, usaremos
-      //"catalog", "cart", "checkout", "thankyou"
-      page: 'catalog',
-      //productos del catálogo
-      products: catalogProducts,
-      //productos en el carrito (con cantidad de cada uno)
-      cart: [],
-      //datos personales del pedido
-      orderDetails: {},
-      //errores en los datos del pedido
-      orderErrors: {}
+class Shop extends  Component {
+  constructor(props){
+    super(props);
+    // TODO: estado inicial de la aplicación
+    this.state = {
+      //página o "ruta" actual
+
+      // lista de productos
+
+      // lista de productos en el carrito
+
+      // datos del pedido
+
+      // errores de pedido
+
     }
-  },
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.handleQuantityChange = this.handleQuantityChange.bind(this);
+    this.handleCheckout = this.handleCheckout.bind(this);
+    this.handleNavigate = this.handleNavigate.bind(this);
+  }
 
-  navigate(newPage){
-    //TODO: cambiar la página actual
-  },
+  //  Cambia la página actual
+  handleNavigate(newPage){
+    /* TODO */
+  }
 
+  // Añade un producto al carrito
   handleAddToCart({product}){
-    var cartItems = this.state.cart;
-    //TODO: Comprobar si el producto ya está
-    var existingProduct = null;
-    if(existingProduct){
-      //aumentamos la cantidad de ese producto
-      this.handleQuantityChange({ product, qty: existingProduct.qty+1});
-    }
-    else {
-      //lo añadimos al carrito, copiamos propiedades y añadimos QTY
-      var newItem = {
-        id: product.id,
-        name: product.name,
-        description: product.description,
-        price: product.price,
-        qty: 1
-      };
-      this.setState({ cart: cartItems.concat(newItem )});
-    }
-    //mostramos la página del carrito
-    this.navigate('cart');
-  },
+    let cartItems = this.state.cart;
+    // TODO - añadir un producto al carrito
+    // si ya estaba, sumar 1 a la cantidad
+    // finalmente, navegar al carrito
+    this.handleNavigate('cart');
+  }
 
+  // Modifica la cantidad de un producto en el carrito
   handleQuantityChange({ product, qty }){
-    //TODO: cambiar la cantidad de un item en el carrito
-    //TODO: filter out items with 0 qty
-    //TODO: guardar en state
-  },
+    //TODO: modificar la cantidad de un elemento en el carrito
+    //TODO: Filtrar elementos que queden con cantidad 0
+    // y gardar en el estado!
+  }
 
+  // Recibe los datos personales del pedido y lo valida,
+  // navegando a la página final si es correcto
   handleCheckout({ order }){
-    var errors = {};
-    /** TODO - validacion */
+    let errors = {};
+    if(order.firstName.trim() === ''){
+      errors.firstName = 'El nombre es obligatorio';
+    }
+    if(order.lastName.trim() === ''){
+      errors.lastName = 'El apellido es obligatorio';
+    }
+    if(order.email.trim() === ''){
+      errors.email = 'Debe introducir un email';
+    }
+    if(order.address.trim() === ''){
+      errors.address = 'Debe introducir una dirección de entrega';
+    }
     if(Object.keys(errors).length === 0){
-      //everything ok! empty cart and navigate to thankyou page
-      //TODO
+      //TODO: todo bien, limpiar datos y navegar a ThankYou
+
     }
     else {
-      //stay on the same page, display errors
-      //TODO
+      //TODO: nos quedamos en la misma página para mostrar los errores
     }
-  },
+  }
 
+  // Devuelve el componente apropiado para
+  // la página actual
   getComponentForPage(page){
     switch(page){
     case 'catalog':
-      return <Catalog
-        items={ this.state.products }
-        onNavigate={ this.navigate }
-        onAddToCart={ this.handleAddToCart } />
-
-    //TODO: resto pantallas
+      return (
+        <Catalog
+          items={ this.state.products }
+          onAddToCart={ this.handleAddToCart } />
+      );
     case 'cart':
-      break;
-
+      return (
+        <Cart
+          items={ this.state.cart }
+          onNavigate={ this.handleNavigate }
+          onCartQuantityChange={ this.handleQuantityChange } />
+      );
     case 'checkout':
-      break;
-
+      return (
+        <Checkout
+          errors={ this.state.orderErrors }
+          onProcessOrder={ this.handleCheckout }
+          onBackToCart={ () => this.handleNavigate('cart')} />
+      );
     case 'thankyou':
-      break;
-
+      return (
+        <ThankYou
+          orderDetails={ this.state.orderDetails }
+          onBackToShopping={ () => this.handleNavigate('catalog') } />
+      );
     default:
-      return <NotFound onBackToCatalog={ () => this.navigate('catalog') } />
+      return (
+        <NotFound
+          onBackToCatalog={ () => this.handleNavigate('catalog') } />
+      );
     }
-  },
+  }
 
   render(){
     const component = this.getComponentForPage(this.state.page);
@@ -100,6 +120,6 @@ const Shop = React.createClass({
       </div>
     )
   }
-});
+}
 
 export default Shop;

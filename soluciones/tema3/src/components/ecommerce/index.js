@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { products as catalogProducts } from '../../data/catalog';
 import Catalog from './catalog';
 import Cart from './cart';
@@ -6,21 +6,34 @@ import Checkout from './checkout';
 import ThankYou from './thankyou';
 import NotFound from './notfound';
 
-const Shop = React.createClass({
-  getInitialState(){
-    return {
+class Shop extends  Component {
+  constructor(props){
+    super(props);
+    //estado inicial de la aplicación
+    this.state = {
+      //página o "ruta" actual
       page: 'catalog',
+      // lista de productos
       products: catalogProducts,
+      // lista de productos en el carrito
       cart: [],
+      // datos del pedido
       orderDetails: {},
+      // errores de pedido
       orderErrors: {}
     }
-  },
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.handleQuantityChange = this.handleQuantityChange.bind(this);
+    this.handleCheckout = this.handleCheckout.bind(this);
+    this.handleNavigate = this.handleNavigate.bind(this);
+  }
 
-  navigate(newPage){
+  //  Cambia la página actual
+  handleNavigate(newPage){
     this.setState({ page: newPage });
-  },
+  }
 
+  // Añade un producto al carrito
   handleAddToCart({product}){
     let cartItems = this.state.cart;
     //is the same product already in cart?
@@ -44,9 +57,10 @@ const Shop = React.createClass({
       };
       this.setState({ cart: cartItems.concat(newItem )});
     }
-    this.navigate('cart');
-  },
+    this.handleNavigate('cart');
+  }
 
+  // Modifica la cantidad de un producto en el carrito
   handleQuantityChange({ product, qty }){
     let cartItems = this.state.cart.map(item => {
       if(item.id === product.id){
@@ -59,8 +73,10 @@ const Shop = React.createClass({
     this.setState({
       cart: remainingItems
     });
-  },
+  }
 
+  // Recibe los datos personales del pedido y lo valida,
+  // navegando a la página final si es correcto
   handleCheckout({ order }){
     let errors = {};
     if(order.firstName.trim() === ''){
@@ -90,37 +106,45 @@ const Shop = React.createClass({
         orderErrors: errors
       });
     }
-  },
+  }
 
+  // Devuelve el componente apropiado para
+  // la página actual
   getComponentForPage(page){
     switch(page){
     case 'catalog':
-      return <Catalog
-        items={ this.state.products }
-        onNavigate={ this.navigate }
-        onAddToCart={ this.handleAddToCart } />
+      return (
+        <Catalog
+          items={ this.state.products }
+          onAddToCart={ this.handleAddToCart } />
+      );
     case 'cart':
-      return <Cart
-        items={ this.state.cart }
-        onNavigate={ this.navigate }
-        onCartQuantityChange={ this.handleQuantityChange } />;
+      return (
+        <Cart
+          items={ this.state.cart }
+          onNavigate={ this.handleNavigate }
+          onCartQuantityChange={ this.handleQuantityChange } />
+      );
     case 'checkout':
       return (
         <Checkout
           errors={ this.state.orderErrors }
           onProcessOrder={ this.handleCheckout }
-          onBackToCart={ () => this.navigate('cart')} />
-      )
+          onBackToCart={ () => this.handleNavigate('cart')} />
+      );
     case 'thankyou':
       return (
         <ThankYou
           orderDetails={ this.state.orderDetails }
-          onBackToShopping={ () => this.navigate('catalog') } />
-      )
+          onBackToShopping={ () => this.handleNavigate('catalog') } />
+      );
     default:
-      return <NotFound onBackToCatalog={ () => this.navigate('catalog')} />
+      return (
+        <NotFound
+          onBackToCatalog={ () => this.handleNavigate('catalog') } />
+      );
     }
-  },
+  }
 
   render(){
     const component = this.getComponentForPage(this.state.page);
@@ -130,6 +154,6 @@ const Shop = React.createClass({
       </div>
     )
   }
-});
+}
 
 export default Shop;
