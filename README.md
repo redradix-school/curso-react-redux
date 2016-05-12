@@ -33,7 +33,7 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Ejercicio - Construyendo una aplicación real: Ecommerce
 
 
-## 4. Redux (REMAKE)
+## 4. Redux
 - Qué es Redux
 - Los 3 principios de Redux
 - Estado global
@@ -54,7 +54,7 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Ejercicio - Ecommerce: terminar la aplicación
 
 
-## 5. React y Redux en el mundo real (REMAKE)
+## 5. React y Redux en el mundo real
 - Redux DevTools
 - Rutas en el cliente con React Router
 - Configuración de rutas y búsqueda de coincidencias
@@ -72,6 +72,6 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Configurar Mocha para testear componentes de React
 - Shallow render y JSDOM
 - React Test Utils
-- Testing de componentes de React (REMAKE)
-- Testing de acciones y reducers de Redux (REMAKE)
+- Testing de componentes de React
+- Testing de acciones y reducers de Redux
 
