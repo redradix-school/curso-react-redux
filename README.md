@@ -30,34 +30,39 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Ejercicio - Base de datos de personajes
 - Ciclo de vida de un componente
 - Optimización de rendimiento
-- Clases ES6 como componentes React
-- Mixins y Componentes de Orden Superior
-- Componentes sin estado
 - Ejercicio - Construyendo una aplicación real: Ecommerce
 
 
-## 4. Flux y Redux
-- Qué es Flux
-- Acciones y creación de acciones
-- Dispatcher
+## 4. Redux (REMAKE)
 - Qué es Redux
-- Gestionar el estado con reducers
+- Los 3 principios de Redux
+- Estado global
+- Acciones
+- Reducers
+- Store de Redux
 - Combinación reducers
-- Reducers de orden superior
-- Organización del código en módulos
-- Ejercicio - Módulos de nuestro Ecommerce
 - Conectar Redux y React
+- Organización del código
+- Ejercicio - Ecommerce: módulos Route y Catalog
+- Encapsular acceso al estado con reselect
+- Ejercicio - Ecommerce: módulo Cart
+- Conectar Action creators como props con bindActionCreators
+- Ejercicio - Ecommerce: componente Cart
 - Redux middleware
-- Implementando redux-thunk
-- Ejercicio - Terminando nuestro Ecommerce con Redux
+- Ejercicio - Ecommerce: módulo Order
+- Formularios con Redux
+- Ejercicio - Ecommerce: terminar la aplicación
 
-## 5. React y Redux en el mundo real
+
+## 5. React y Redux en el mundo real (REMAKE)
+- Redux DevTools
 - Rutas en el cliente con React Router
 - Configuración de rutas y búsqueda de coincidencias
 - Transiciones y ciclo de vida por ruta
 - Integración React Router con Redux
 - Ejercicio - Añadir rutas a nuestro Ecommerce
-- Comunicación con el servidor
+- Comunicación con el servidor con Redux
+- Ajax en 2016 con fetch
 - Integración con APIs REST
 - Ejercicio - Cargar nuestro catálogo desde el servidor
 
@@ -66,9 +71,7 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Introducción rápida a Mocha
 - Configurar Mocha para testear componentes de React
 - Shallow render y JSDOM
-- Mocking con Sinon.js
-- Inyección de dependencias con Rewire
 - React Test Utils
-- Testing de componentes de React
-- Testing de acciones y reducers de Redux
+- Testing de componentes de React (REMAKE)
+- Testing de acciones y reducers de Redux (REMAKE)
 
