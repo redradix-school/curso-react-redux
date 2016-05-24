@@ -56,15 +56,18 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 
 ## 5. React y Redux en el mundo real
 - Redux DevTools
-- Rutas en el cliente con React Router
+- Introducción a React Router
 - Configuración de rutas y búsqueda de coincidencias
-- Transiciones y ciclo de vida por ruta
-- Integración React Router con Redux
+- Rutas anidadas
 - Ejercicio - Añadir rutas a nuestro Ecommerce
-- Comunicación con el servidor con Redux
-- Ajax en 2016 con fetch
-- Integración con APIs REST
-- Ejercicio - Cargar nuestro catálogo desde el servidor
+- Navegar desde componentes con Link
+- Navegar desde código y confirmar navegación
+- Integrar React Router con Redux - navegar mediante action creators
+- Ejercicio - Terminar rutas en nuestro Ecommerce
+- Acceso a APIs REST con Redux
+- GET y POST con fetch
+- Acciones asíncronas con Redux
+- Ejercicio - Ecommerce: cargar catálogo desde el servidor
 
 ## 6. Testing
 - Por qué es importante el testing

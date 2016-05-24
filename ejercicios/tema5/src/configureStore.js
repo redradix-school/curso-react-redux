@@ -6,7 +6,8 @@ import route from './modules/route';
 import thunkMiddleware from 'redux-thunk';
 import logger from './middlewares/logger';
 import { browserHistory } from 'react-router';
-import { routerMiddleware, routerReducer as routing } from 'react-router-redux';
+//import { routerMiddleware, routerReducer as routing } from 'react-router-redux';
+
 
 export default function configureStore(){
   const appReducer = combineReducers({
