@@ -70,11 +70,13 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Ejercicio - Ecommerce: cargar catálogo desde el servidor
 
 ## 6. Testing
-- Por qué es importante el testing
-- Introducción rápida a Mocha
-- Configurar Mocha para testear componentes de React
-- Shallow render y JSDOM
-- React Test Utils
-- Testing de componentes de React
-- Testing de acciones y reducers de Redux
+- Motivos
+- Mocha
+- Aserciones con assert y should
+- Mocking son sinon: spies, stubs
+- Infraestructura de testing: ES6, JSX
+- Testing de componentes: shallow rendering
+- Testing de reducers
+- Testing de action creators
+- Cobertura de código
 
