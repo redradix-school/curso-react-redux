@@ -13,7 +13,7 @@ class Cart extends Component {
   // Calcula el importe total del carrito
   calculateTotal(){
     /* TODO */
-    return 0.toFixed(2);
+    return (0).toFixed(2);
 
   }
 

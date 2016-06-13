@@ -12,7 +12,7 @@ class Shop extends  Component {
     // TODO: estado inicial de la aplicación
     this.state = {
       //página o "ruta" actual
-
+      page: 'catalog'
       // lista de productos
 
       // lista de productos en el carrito

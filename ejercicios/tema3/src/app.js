@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //ejercicios
 //import Cronometro from './components/cronometro';
-//import Buscador from './components/buscador';
-import MixinComponent from './components/mixin_component';
-import RandomList from './components/random_list';
+import CountDown from './components/cuenta_atras';
+import TodoApp from './components/todo';
+import Buscador from './components/buscador';
 import Ecommerce from './components/ecommerce';
 
-window.onload = function(){
-  ReactDOM.render(<Ecommerce />, document.getElementById('app'));
-}
+
+ReactDOM.render(<Buscador />, document.getElementById('app'));

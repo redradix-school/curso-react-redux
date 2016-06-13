@@ -1,5 +1,7 @@
 //datos para ejercicio buscador
 module.exports = {
+  families: ["Stark", "Lannister", "Targaryen", "Baratheon", "Tyrell", "Bolton"],
+  seasons: [1,2,3,4,5],
   characters: [
     {
       name: "Rickon Stark",

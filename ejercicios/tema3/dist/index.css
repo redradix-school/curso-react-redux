@@ -1,6 +1,8 @@
 body {
   font-family: sans-serif;
   font-size: 16px;
+  padding: 0;
+  margin: 0;
 }
 
 /* Comunes */
@@ -32,9 +34,9 @@ body {
   width: 25%;
 }
 
-input, select, textarea {
+input, select, option, textarea {
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 4px;
   resize: none;
 }
@@ -109,10 +111,31 @@ input.big, textarea.big {
   background: #f00;
 }
 
+/* Estilos todos */
+.todo-app {
+  padding: 10px
+}
+
 /* Estilos para el ejercicio buscador */
+.search-container {
+  background: #000 url('got_throne.jpg') no-repeat center right fixed;
+  margin: 0;
+  padding-top: 1%;
+  min-height: 1200px;
+  /*padding-bottom: 1%;*/
+}
+.search-engine {
+  border: 3px solid #789;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  /*box-shadow: 0px 2px 3px 2px #fff;*/
+}
 .search-form form {
   margin: 0;
   padding: 0;
+  background: #fff;
 }
 .search-form label {
   margin-right: 2em;
@@ -136,18 +159,13 @@ input.big, textarea.big {
 }
 .search-form fieldset {
   border-radius: 5px;
-  border-color: #ccc;
+  border-color: #300;
   border-style: solid;
+  border-width: 1px;
   margin-bottom: 10px;
   text-align: right;
 }
-.search-engine {
-  border: 1px solid #000;
-  border-radius: 5px;
-  max-width: 800px;
-  margin: 5% auto;
-  box-shadow: 0px 2px 3px 2px #ccc;
-}
+
 .search-title {
   padding: 4px 8px;
 }
@@ -166,16 +184,15 @@ input.big, textarea.big {
   display: inline-block;
 }
 .search-results, .search-results-summary {
-  border-top: 1px solid #ccc;
+  border-top: 2px solid #789;
   clear: left;
 }
 .search-results table {
   width: 100%;
 }
 .search-results table th {
-  padding: 4px;
   text-align: left;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px solid #789;
 }
 .search-results th.center, td.center {
   text-align: center
@@ -184,13 +201,13 @@ input.big, textarea.big {
   background: #fff;
 }
 .search-results tbody tr:nth-child(even) {
-  background-color: #f0f0f0;
+  background-color: #f6f6f6;
 }
 .search-results tbody tr:hover {
   background-color: #def;
 }
-.search-results table td {
-  padding: 4px;
+.search-results table td, .search-results table th {
+  padding: 4px 8px;
 }
 .search-results-summary {
   text-align: center;

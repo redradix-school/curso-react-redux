@@ -1,34 +1,23 @@
 import React, { Component } from 'react';
 import Title from './title';
 import Form from './form';
-import Results from './results';
-import { characters } from '../../data/got';
-
-// Extrae los diferentes nombres de familias de la lista de personajes
-function extractFamilyNames(people){
-  //TODO!!!
-  return [];
-}
-
-// Extrae las diferentes temporadas de la lista de personajes
-function extractAllSeasons(people){
-  //TODO: devolvemos un array ordenado
-  return [];
-}
+import CharacterList from './character_list';
+import Summary from './summary';
+import { characters, families, seasons } from '../../data/got';
 
 // Filtra los personajes a partir de una "consulta"
-function search(query){
-  const nameRegEx = new RegExp(query.name, 'i');
+function search(characters, filter){
+  const nameRegEx = new RegExp(filter.name, 'i');
   return characters.filter(c => {
     return (
-      //name or actor matches query name
+      //por nombre de personaje o actor (con expresion regular)
       (nameRegEx.test(c.name) || nameRegEx.test(c.actor))
-      //character family equals query family
-      && (query.family.trim() === '' || c.family === query.family)
-      //character is alive
-      && (!query.aliveOnly || c.alive)
-      //character appears in query seasons
-      && query.seasons.every(s => c.seasons.includes(s))
+      //por familia
+      && (filter.family.trim() === '' || c.family === filter.family)
+      //solo vivos
+      && (!filter.aliveOnly || c.alive)
+      //aparece en tempoadas
+      && (filter.seasons.every(s => c.seasons.includes(s)))
     );
   });
 }
@@ -38,9 +27,9 @@ class Buscador  extends Component {
     super(props);
     this.handleQueryChange = this.handleQueryChange.bind(this);
     this.state = {
-      results: characters,
-      familyNames: extractFamilyNames(characters),
-      allSeasons: extractAllSeasons(characters),
+      characters: characters,
+      familyNames: families.sort(),
+      allSeasons: seasons.sort(),
       filter: {
         name: '',
         family: '',
@@ -52,21 +41,28 @@ class Buscador  extends Component {
 
   handleQueryChange(changes){
     const currentFilter = this.state.filter;
+    const newFilter = Object.assign({}, currentFilter, changes);
     //TODO: actualizar el filtro en el state del componente
+    this.setState({
+      filter: newFilter
+    });
   }
 
   render(){
     //los resultados siempre son una búsqueda con el filtro
-    const results = search(this.state.filter);
+    const results = search(this.state.characters, this.state.filter);
     return (
-      <div className='search-engine'>
-        <Title text="Buscador Juego de Tronos" />
-        <Form
-          filter={ this.state.filter }
-          families={ this.state.familyNames }
-          allSeasons={ this.state.allSeasons }
-          onQueryChange={ this.handleQueryChange } />
-        <Results items={ results } />
+      <div className='search-container'>
+        <div className='search-engine'>
+          <Title text='Buscador Juego de Tronos' />
+          <Form
+            filter={ this.state.filter }
+            families={ this.state.familyNames }
+            allSeasons={ this.state.allSeasons }
+            onQueryChange={ this.handleQueryChange } />
+          <Summary total={ results.length } />
+          <CharacterList items={ results } />
+        </div>
       </div>
     )
   }
