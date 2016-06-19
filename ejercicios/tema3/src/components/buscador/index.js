@@ -43,9 +43,7 @@ class Buscador  extends Component {
     const currentFilter = this.state.filter;
     const newFilter = Object.assign({}, currentFilter, changes);
     //TODO: actualizar el filtro en el state del componente
-    this.setState({
-      filter: newFilter
-    });
+
   }
 
   render(){

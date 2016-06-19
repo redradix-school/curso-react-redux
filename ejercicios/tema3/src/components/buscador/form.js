@@ -5,8 +5,6 @@ import SeasonItem from './season_item';
 class Form extends Component {
   constructor(props){
     super(props);
-    //this.handleNameChange = this.handleNameChange.bind(this);
-    //this.handleFamilyChange = this.handleFamilyChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleAliveChange = this.handleAliveChange.bind(this);
     this.handleSeasonChange = this.handleSeasonChange.bind(this);
@@ -19,25 +17,21 @@ class Form extends Component {
   }
 
   handleTextChange(e){
-    this.notifyChange({
-      [e.target.id]: e.target.value
-    })
+    //TODO - notificar el cambio en el texto del input nombre
+    //o en el select familia
+
   }
 
   handleAliveChange(e){
-    //TODO
-    this.notifyChange({ aliveOnly: !!e.target.checked });
+    //TODO - notificar el cambio en el bool
+
   }
 
   handleSeasonChange(e){
-    //TODO
-    const season = parseInt(e.target.value);
-    const currentSeasons = this.props.filter.seasons;
-    const newSeasons = e.target.checked ?
-      currentSeasons.concat([season]) :
-      currentSeasons.filter(x => x!== season);
+    //TODO - notificar temporada seleccionada
+    //enviando el array completo CON o SIN la temporada
+    //modificada
 
-    this.notifyChange({ seasons: newSeasons.sort() });
   }
 
   renderSeasons(allSeasons, currentSeasons){
