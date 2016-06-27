@@ -17,5 +17,4 @@ Shop.propTypes = {
 }
 
 
-//export default connect(mapStateToProps)(Shop);
 export default Shop;

@@ -6,7 +6,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './configureStore';
 import Ecommerce from './components/ecommerce';
 
-
 const store = configureStore();
 //TODO - ejercicio
 // sincronizar store con history

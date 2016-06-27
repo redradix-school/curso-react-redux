@@ -23,7 +23,7 @@ var devConfig = {
     ]
   },
   devServer: {
-    contentPath: outPath
+    contentBase: outPath
   }
 };
 
