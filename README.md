@@ -44,10 +44,11 @@ Este repositorio contiene las fuentes, ejercicios y soluciones del curso React +
 - Combinación reducers
 - Conectar Redux y React
 - Organización del código
-- Ejercicio 1 - Ecommerce: módulos Route y Catalog
+- Ejercicio 1 - Ecommerce: instalar Redux, módulo Route
+- Ejercicio 2 - Ecommerce: módulo Catalog
 - Encapsular acceso al estado con reselect
 - Ejercicio 2 - Ecommerce: módulo Cart
-- Conectar Action creators como props con bindActionCreators
+- Mapear dispatch a props
 - Ejercicio 3 - Ecommerce: componente Cart
 - Redux middleware
 - Ejercicio 4 - Ecommerce: módulo Order
